@@ -34,7 +34,7 @@ public partial class Insert : System.Web.UI.Page
 
         //UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
         //successStatus = userDataBaseHandler.InsertUserDataToDB(aUser);
-        //fullName = aUser.GetFullName();
+        
     }
 }
 

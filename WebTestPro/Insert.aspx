@@ -29,6 +29,14 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="txtBoxContact" class="col-sm-2 col-form-label">Gender</label>
+                <div class="col-sm-4">
+                    <asp:RadioButton ID="Male" runat="server" />
+                    <asp:RadioButton ID="Female" runat="server" />
+                    <asp:RadioButton ID="Prefer not to say" runat="server" />
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="txtBoxContact" class="col-sm-2 col-form-label">Contact Number</label>
                 <div class="col-sm-4">
                     <asp:TextBox ID="txtBoxContact" placeholder="Phone number" class="form-control" runat="server" ></asp:TextBox>
