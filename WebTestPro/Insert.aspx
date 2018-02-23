@@ -33,7 +33,6 @@
                 <div class="col-sm-4">
                     <asp:RadioButton ID="Male" runat="server" />
                     <asp:RadioButton ID="Female" runat="server" />
-                    <asp:RadioButton ID="Prefer not to say" runat="server" />
                 </div>
             </div>
             <div class="form-group row">
