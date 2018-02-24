@@ -8,12 +8,15 @@ using System.Web.UI.WebControls;
 
 public partial class Insert : System.Web.UI.Page
 {
+    private int testCounter = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (IsPostBack != true)
+        {
+            testCounter++;
+        }
     }
 
-    private bool successStatus = false;
 
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -33,11 +36,35 @@ public partial class Insert : System.Web.UI.Page
         {
             aUser.Gender = RadioButtonListGender.SelectedValue;
         }
-        aUser.InsertUser(aUser);
+        else aUser.Gender = "NA";
+
+        if (aUser.InsertUser(aUser))
+        {
+            Response.Write("<script>alert('Your information has been inserted successfully!');</script>");
+            ClearAllFormElements();
+        }
+        else
+        {
+            Response.Write("<script>alert('Data could not be saved');</script>");
+        }
 
         //UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
         //successStatus = userDataBaseHandler.InsertUserDataToDB(aUser);
         
+    }
+
+    private void ClearAllFormElements()
+    {
+        txtBoxFName.Text = null;
+        txtBoxLName.Text = null;
+        txtBoxEmail.Text = null;
+        txtBoxContact.Text = null;
+        txtBoxStreetNumber.Text = null;
+        txtBoxStreetAddress.Text = null;
+        txtBoxPostCode.Text = null;
+        txtBoxDistrict.Text = null;
+        txtBoxCountry.Text = null;
+        RadioButtonListGender.ClearSelection();
     }
 }
 
