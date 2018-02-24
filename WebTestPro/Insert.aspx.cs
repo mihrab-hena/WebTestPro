@@ -29,7 +29,10 @@ public partial class Insert : System.Web.UI.Page
         aUser.District = txtBoxDistrict.Text;
         aUser.Country = txtBoxCountry.Text;
 
-        
+        if (RadioButtonListGender.SelectedItem != null)
+        {
+            aUser.Gender = RadioButtonListGender.SelectedValue;
+        }
         aUser.InsertUser(aUser);
 
         //UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
