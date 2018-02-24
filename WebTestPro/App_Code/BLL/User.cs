@@ -99,4 +99,10 @@ public class User
         return (userDataBaseHandler.InsertUserDataToDB(user));
     }
 
+    public bool UpdateUser(User user)
+    {
+        UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
+        return (userDataBaseHandler.UpdateUserDataToDB(user));
+    }
+
 }
