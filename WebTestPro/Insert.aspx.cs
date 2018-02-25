@@ -32,13 +32,15 @@ public partial class Insert : System.Web.UI.Page
         aUser.District = txtBoxDistrict.Text;
         aUser.Country = txtBoxCountry.Text;
 
+        UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
+
         if (RadioButtonListGender.SelectedItem != null)
         {
             aUser.Gender = RadioButtonListGender.SelectedValue;
         }
         else aUser.Gender = "NA";
 
-        if (aUser.InsertUser(aUser))
+        if (userDataBaseHandler.InsertUserDataToDB(aUser))
         {
             Response.Write("<script>alert('Your information has been inserted successfully!');</script>");
             ClearAllFormElements();
@@ -47,9 +49,6 @@ public partial class Insert : System.Web.UI.Page
         {
             Response.Write("<script>alert('Data could not be saved');</script>");
         }
-
-        //UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
-        //successStatus = userDataBaseHandler.InsertUserDataToDB(aUser);
         
     }
 
