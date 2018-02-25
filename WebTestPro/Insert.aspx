@@ -19,13 +19,15 @@
             <div class="form-group row">
                 <label for="txtBoxFName" class="col-sm-2 col-form-label" align="right">First Name</label>
                 <div class="col-sm-4">
-                    <asp:TextBox ID="txtBoxFName" placeholder="First Name" class="form-control" runat="server" ></asp:TextBox>
-                </div>
+                    <asp:TextBox ID="txtBoxFName" placeholder="First Name" class="form-control" runat="server" CausesValidation="True" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="fNameReqV" ControlToValidate="txtBoxFName" runat="server" ErrorMessage="First name is required"></asp:RequiredFieldValidator>
+                </div> 
             </div>
             <div class="form-group row">
                 <label for="txtBoxFName" class="col-sm-2 col-form-label">Last Name</label>
                 <div class="col-sm-4">
                     <asp:TextBox ID="txtBoxLName" placeholder="Last Name" class="form-control" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="lNameReqV" ControlToValidate="txtBoxLName" runat="server" ErrorMessage="Last name is required"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group row">
@@ -35,6 +37,7 @@
                         <asp:ListItem class="radio-inline" Text="Male" Value="Male">Male</asp:ListItem>
                         <asp:ListItem class="radio-inline" Text="Female" Value="Female"></asp:ListItem>
                     </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="radioBtnListGenderReqV" ControlToValidate="RadioButtonListGender" runat="server" ErrorMessage="Please select your gender"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group row">
@@ -47,6 +50,8 @@
                 <label for="txtBoxEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-4">
                     <asp:TextBox ID="txtBoxEmail" placeholder="Email" class="form-control" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="emailReqV" ControlToValidate="txtBoxEmail" runat="server" ErrorMessage="Email is required"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="emailRegularV" ControlToValidate="txtBoxEmail" runat="server" ErrorMessage="Please enter correct email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="form-group row">
@@ -86,4 +91,7 @@
         </div>
     </form>
 </body>
+
+
+
 </html>
