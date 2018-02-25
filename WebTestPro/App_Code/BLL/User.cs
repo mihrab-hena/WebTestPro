@@ -93,16 +93,5 @@ public class User
         return firstName + " " + lastName;
     }
 
-    public bool InsertUser(User user)
-    {
-        UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
-        return (userDataBaseHandler.InsertUserDataToDB(user));
-    }
-
-    public bool UpdateUser(User user)
-    {
-        UserDataBaseHandler userDataBaseHandler = new UserDataBaseHandler();
-        return (userDataBaseHandler.UpdateUserDataToDB(user));
-    }
 
 }
