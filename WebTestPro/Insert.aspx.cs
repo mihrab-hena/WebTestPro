@@ -40,16 +40,22 @@ public partial class Insert : System.Web.UI.Page
         }
         else aUser.Gender = "NA";
 
-        if (userDataBaseHandler.InsertUserDataToDB(aUser))
+        try
         {
-            Response.Write("<script>alert('Your information has been inserted successfully!');</script>");
-            ClearAllFormElements();
+            if (userDataBaseHandler.InsertUserDataToDB(aUser))
+            {
+                Response.Write("<script>alert('Your information has been inserted successfully!');</script>");
+                ClearAllFormElements();
+            }
         }
-        else
+        catch (SqlException sqlException)
         {
             Response.Write("<script>alert('Data could not be saved');</script>");
         }
-        
+        catch (Exception exception)
+        {
+            Response.Write("<script>alert('Error occured');</script>");
+        }
     }
 
     private void ClearAllFormElements()
