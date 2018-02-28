@@ -30,4 +30,9 @@ public partial class AllUsersInfo : System.Web.UI.Page
             Response.Write("<script>alert('Error occured');</script>");
         }
     }
+
+    protected void linkBtnGoBack_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Insert.aspx");
+    }
 }
