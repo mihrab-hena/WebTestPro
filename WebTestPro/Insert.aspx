@@ -6,16 +6,10 @@
 <head runat="server">
     <title></title>
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            width: 80%;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <div class="container-fluid" align="center">
-            <!--div class="jumbotron"></!--div-->
             <div class="form-group row">
                 <label for="txtBoxFName" class="col-sm-2 col-form-label" align="right">First Name</label>
                 <div class="col-sm-4">
@@ -85,12 +79,18 @@
                 </div>
             </div>
             <div class="col-sm-4">
+                <label for="txtBoxDistrict" class="col-sm-2 col-form-label">
+                </label>
                 <asp:Button ID="btnGender" runat="server" Text="Submit" class="btn btn-default" OnClick="btnSubmit_Click"/>
+                
+                <asp:LinkButton CausesValidation="False" ID="btnShowAllUsers" runat="server" OnClick="btnShowAllUsers_Click">Show All</asp:LinkButton>
+                
             </div>
         
         </div>
+    
     </form>
-</body>
+    </body>
 
 
 
