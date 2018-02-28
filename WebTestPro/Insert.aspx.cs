@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Script.Serialization;
 
 public partial class Insert : System.Web.UI.Page
 {
@@ -38,7 +39,7 @@ public partial class Insert : System.Web.UI.Page
         {
             aUser.Gender = RadioButtonListGender.SelectedValue;
         }
-        else aUser.Gender = "NA";
+        else aUser.Gender = "";
 
         try
         {
@@ -50,12 +51,13 @@ public partial class Insert : System.Web.UI.Page
         }
         catch (SqlException sqlException)
         {
-            Response.Write("<script>alert('Data could not be saved');</script>");
+            Response.Write("<script>alert('Data could not be saved' " + sqlException.Message +");</script>");
         }
         catch (Exception exception)
         {
             Response.Write("<script>alert('Error occured');</script>");
         }
+  
     }
 
     private void ClearAllFormElements()
@@ -70,6 +72,14 @@ public partial class Insert : System.Web.UI.Page
         txtBoxDistrict.Text = null;
         txtBoxCountry.Text = null;
         RadioButtonListGender.ClearSelection();
+    }
+
+
+
+
+    protected void btnShowAllUsers_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("AllUsersInfo.aspx");
     }
 }
 
