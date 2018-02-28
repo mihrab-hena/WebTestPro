@@ -8,6 +8,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     </head>
 <body>
+    <div style="margin: 0 auto;">
     <form id="form1" runat="server">
         <div class="container-fluid" align="center">
             <div class="form-group row">
@@ -78,18 +79,15 @@
                     <asp:TextBox ID="txtBoxCountry" placeholder="Country" class="form-control" runat="server" ></asp:TextBox>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <label for="txtBoxDistrict" class="col-sm-2 col-form-label">
-                </label>
-                <asp:Button ID="btnGender" runat="server" Text="Submit" class="btn btn-default" OnClick="btnSubmit_Click"/>
-                
-                <asp:LinkButton CausesValidation="False" ID="btnShowAllUsers" runat="server" OnClick="btnShowAllUsers_Click">Show All</asp:LinkButton>
-                
+            <div class="form-group row" >
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-default" OnClick="btnSubmit_Click"/>
+                <div class="col-sm-4">
+                    <asp:Button CausesValidation="False" ID="btnShowAllUsers" runat="server" class="btn btn-default" OnClick="btnShowAllUsers_Click" Text="Show All" />
+                </div>
             </div>
-        
         </div>
-    
     </form>
+    </div>
     </body>
 
 
