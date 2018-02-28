@@ -58,25 +58,25 @@ public class UserDataBaseHandler
         return successStatus;
     }
 
-    public bool UpdateUserDataToDB(User anUser)
-    {
-        string connectionString = ConfigurationManager.ConnectionStrings["DBHotel"].ConnectionString;
-        SqlConnection sqlConnection = new SqlConnection(connectionString);
-        SqlCommand sqlComnd = new SqlCommand();
-        sqlComnd.Connection = sqlConnection;
+    //public bool UpdateUserDataToDB(User anUser)
+    //{
+    //    string connectionString = ConfigurationManager.ConnectionStrings["DBHotel"].ConnectionString;
+    //    SqlConnection sqlConnection = new SqlConnection(connectionString);
+    //    SqlCommand sqlComnd = new SqlCommand();
+    //    sqlComnd.Connection = sqlConnection;
 
-        sqlComnd.Parameters.AddWithValue("@FirstName", anUser.FirstName);
-        sqlComnd.Parameters.AddWithValue("@LastName", anUser.LastName);
-        sqlComnd.Parameters.AddWithValue("@Gender", anUser.Gender);
-        sqlComnd.Parameters.AddWithValue("@Phone", anUser.PhoneNumber);
-        sqlComnd.Parameters.AddWithValue("@Email", anUser.Email);
-        sqlComnd.Parameters.AddWithValue("@StreetAddress", anUser.StreetNumber + " " + anUser.StreetAddress);
-        sqlComnd.Parameters.AddWithValue("@PostCode", anUser.PostCode);
-        sqlComnd.Parameters.AddWithValue("@District", anUser.District);
-        sqlComnd.Parameters.AddWithValue("@Country", anUser.Country);
+    //    sqlComnd.Parameters.AddWithValue("@FirstName", anUser.FirstName);
+    //    sqlComnd.Parameters.AddWithValue("@LastName", anUser.LastName);
+    //    sqlComnd.Parameters.AddWithValue("@Gender", anUser.Gender);
+    //    sqlComnd.Parameters.AddWithValue("@Phone", anUser.PhoneNumber);
+    //    sqlComnd.Parameters.AddWithValue("@Email", anUser.Email);
+    //    sqlComnd.Parameters.AddWithValue("@StreetAddress", anUser.StreetNumber + " " + anUser.StreetAddress);
+    //    sqlComnd.Parameters.AddWithValue("@PostCode", anUser.PostCode);
+    //    sqlComnd.Parameters.AddWithValue("@District", anUser.District);
+    //    sqlComnd.Parameters.AddWithValue("@Country", anUser.Country);
 
-        return true;
-    }
+    //    return true;
+    //}
 
     public List<User> GetAllUsers()
     {
